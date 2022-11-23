@@ -1,0 +1,50 @@
+<!Doctype html>
+<html>
+<head>
+	<title>Do math</title>
+<script>
+	function doMath(num1,num2,callback){
+		var result=callback(num1,num2);
+		document.getElementById("aa").innerHTML += "The result is : " + result + "<br>";	
+	};
+
+	document.addEventListener("DOMContentLoaded",function(){
+	
+		doMath(5,2,function(a,b){
+			var answer1 = a*b;
+			return answer1;
+		});
+		
+		doMath(10,3,function(h,z){
+			var answer2 = h/z;
+			return answer2;
+		});
+		
+		doMath(100,10,function(m,n){
+			var answer3 = m%n;
+			return answer3;
+		});
+	
+	});
+	
+	
+	
+	
+	
+
+</script>
+</head>
+<body>
+
+	<h1>Do the math ok?</h1>
+	<div id="aa">
+	</div>
+	
+	
+	
+
+
+
+</body>
+
+</html>
