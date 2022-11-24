@@ -1,0 +1,23 @@
+<!Doctype html>
+<html>
+<head>
+<script>
+	function greetVisitor(phrase){
+		var welcome = phrase + ". Greet to see you! ";
+		var sayWelcome = function (){
+		alert(welcome);
+		}
+		return sayWelcome;
+		}
+		
+		var personalGreeting = greetVisitor("Hola Amiga");
+		personalGreeting();
+	
+	
+		
+			
+	</script>
+	</head>
+	<body>
+	</body>
+	</html>
