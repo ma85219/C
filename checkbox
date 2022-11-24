@@ -1,0 +1,50 @@
+<!Doctype html>
+<html lang="en">
+	<head>
+		<title>Graphic Checkboxes</title>
+	</head>
+	<body>
+		<h1>Graphic Checkbox Example</h1>
+		
+		<form name="form1">
+		<p><input type="checkbox" name="check1" id="check1"/>
+		An ordinary checkbox.</p>
+		<p><input type="checkbox" name="check2" id="check2"/>
+		A graphic checkbox, created with unotrusive JS.</p>
+		</form>
+		
+		<script>
+		function graphicBox(box){
+			if(!document.getElementById)return;
+			obj=document.getElementById(box);
+			parentobj=obj.parentNode;
+			obj.style.visibility="hidden";
+			img=document.createElement("img");
+			img.onclick=Toggle;
+			img.src="C:\Users\ma852\Desktop\melody.jpg";
+			
+			img.id="img" + box;
+			parentobj.insertBefore(img,obj);
+		}
+		
+		function Toggle(e){
+			if(!e)var e=window.event;
+			
+			img=(e.target)? e.target:e.srcElement;
+			checkid=img.id.substring(3);
+			checkbox = document.getElementById(checkid);
+			checkbox.click();
+			
+			if(checkbox.checked){
+				file="C:\Users\ma852\Desktop\palaceDay.jpg"
+			}else{
+				file="C:\Users\ma852\Desktop\presentpier.jpg";
+			}
+			img.src=file;
+		}
+		
+		graphicBox("check2");
+		
+		</script>
+	</body>
+</html>
